@@ -1,4 +1,4 @@
-package com.leetcode.oj;
+package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
@@ -38,6 +38,16 @@ public class DistinctSubsequencesTestCase extends TestCase {
     }
     public void testCase4() {
         int result = solution.numDistinct("daacaedaceacabbaabdccdaaeaebacddadcaeaacadbceaecddecdeedcebcdacdaebccdeebcbdeaccabcecbeeaadbccbaeccbbdaeadecabbbedceaddcdeabbcdaeadcddedddcececbeeabcbecaeadddeddccbdbcdcbceabcacddbbcedebbcaccac", "ceadbaa");
+        System.out.println(result);
+        //assertTrue(result == 3);
+    }
+    public void testCase5() {
+        int result = solution.numDistinct("babgbag", "bag");
+        System.out.println(result);
+        //assertTrue(result == 3);
+    }
+    public void testCase6() {
+        int result = solution.numDistinct("", "a");
         System.out.println(result);
         //assertTrue(result == 3);
     }

@@ -3,8 +3,8 @@ package com.leetcode.oj.accepted;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.leetcoce.oj.insertinterval.Solution;
 import com.leetcode.oj.common.Interval;
+import com.leetcode.oj.insertinterval.Solution;
 
 import junit.framework.TestCase;
 

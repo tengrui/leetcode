@@ -1,4 +1,4 @@
-package com.leetcoce.oj.insertinterval;
+package com.leetcode.oj.insertinterval;
 
 import java.util.ArrayList;
 import java.util.List;

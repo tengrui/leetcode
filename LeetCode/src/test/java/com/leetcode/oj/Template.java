@@ -1,8 +1,8 @@
 package com.leetcode.oj;
 
-import com.leetcode.oj.wordsearch.Solution;
-
 import junit.framework.TestCase;
+
+import com.leetcode.oj.wordsearch.Solution;
 
 public class Template extends TestCase {
 
@@ -21,6 +21,6 @@ public class Template extends TestCase {
     }
     
     public void testCase1() {
-        
+        assertTrue(true);
     }
 }

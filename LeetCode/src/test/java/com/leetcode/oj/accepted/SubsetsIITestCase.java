@@ -4,7 +4,7 @@ import java.util.List;
 
 
 
-import com.leetcode.oj.subsetii.Solution;
+import com.leetcode.oj.subsetsii.Solution;
 
 import junit.framework.TestCase;
 

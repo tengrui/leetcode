@@ -1,13 +1,10 @@
 package com.leetcode.oj;
 
-
-import java.util.List;
-
-import com.leetcode.oj.palindromepartitioning.Solution;
-
 import junit.framework.TestCase;
 
-public class PalindromePartitioningTestCase extends TestCase {
+import com.leetcode.oj.wordsearch.Solution;
+
+public class PalindromePartitioningIITestCase extends TestCase {
 
     Solution solution = new Solution();
     long startTime = 0L;
@@ -24,15 +21,6 @@ public class PalindromePartitioningTestCase extends TestCase {
     }
     
     public void testCase1() {
-        List<List<String>> r = solution.partition("aab");
-        System.out.println(r);
-        assertTrue(true);
-    }
-    
-    //seeslaveidemonstrateyetartsnomedievalsees
-    public void testCase2() {
-        List<List<String>> r = solution.partition("seeslaveidemonstrateyetartsnomedievalsees");
-        System.out.println(r);
         assertTrue(true);
     }
 }

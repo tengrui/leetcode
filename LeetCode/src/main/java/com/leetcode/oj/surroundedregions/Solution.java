@@ -1,6 +1,8 @@
 package com.leetcode.oj.surroundedregions;
-
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Stack;
+
 
 public class Solution {
     class Point {
@@ -17,60 +19,111 @@ public class Solution {
         }
     }
 
-    public void solve(char [][] board) {
-        Stack<Point> stack = new Stack<Point>();
+    public boolean exist(char[][] board, String word) {
         int row = board.length;
-        if (row == 0) {
-            return;
-        }
         int col = board[0].length;
+        int N = word.length();
+        int index = 0;
 
-        for (int i = 1; i < col - 1; ++i) {
-            if (board[0][i] == 'O') {
-                stack.add(new Point(0, i));
-            }
-            if (board[row - 1][i] == 'O') {
-                stack.add(new Point(row - 1, i));
-            }
-        }
-        for (int i = 1; i < row - 1; ++i) {
-            if (board[i][0] == 'O') {
-                stack.add(new Point(i, 0));
-            }
-            if (board[i][col - 1] == 'O') {
-                stack.add(new Point(i, col - 1));
-            }
-        }
-        while (!stack.isEmpty()) {
-            Point p = stack.pop();
-            int x = p.x;
-            int y = p.y;
+        Stack<List<Point>> visited = new Stack<List<Point>>();
+        Stack<Integer> wordLength = new Stack<Integer>();
 
-            if (x - 1 > 0 && y != 0 && y != col - 1 && board[x - 1][y] == 'O') {
-                board[x - 1][y] = 'M';
-                stack.push(new Point(x - 1, y));
-            }
-            if (x + 1 < row - 1 && y != 0 && y != col - 1 && board[x + 1][y] == 'O') {
-                board[x + 1][y] = 'M';
-                stack.push(new Point(x + 1, y));
-            }
-            if (y - 1 > 0 && x != 0 && x != row - 1 && board[x][y - 1] == 'O') {
-                board[x][y - 1] = 'M';
-                stack.push(new Point(x, y - 1));
-            }
-            if (y + 1 < col - 1 && x != 0 && x != row - 1 && board[x][y + 1] == 'O') {
-                board[x][y + 1] = 'M';
-                stack.push(new Point(x, y + 1));
-            }
-        }
-        for (int i = 1; i < row - 1; ++i) {
-            for (int j = 1; j < col - 1; ++j) {
-                if (board[i][j] == 'M') {
-                    board[i][j] = 'O';
-                } else if (board[i][j] == 'O') {
-                    board[i][j] = 'X';
+        for (int j = 0; j < row; ++j) {
+            for (int k = 0; k < col; ++k) {
+                if (board[j][k] == word.charAt(0)) {
+                    index = 1;
+                    Point p = new Point(j, k);
+                    List<Point> v = new ArrayList<Point>();
+                    v.add(p);
+                    visited.add(v);
+                    wordLength.add(index);
                 }
             }
         }
+        if (index == 0) {
+            return false;
+        } else if (index == N) {
+            return true;
+        }
+
+        while (!visited.isEmpty()) {
+            List<Point> v = visited.pop();
+            index = wordLength.pop();
+            List<Point> next = getNextPoint(word.charAt(index), v, board);
+            for (Point p : next) {
+                int newIndex = index + 1;
+                if (newIndex >= N) {
+                    return true;
+                }
+                List<Point> newV = new ArrayList<Point>();
+                newV.addAll(v);
+                newV.add(0, p);
+                visited.push(newV);
+                wordLength.push(newIndex);
+            }
+        }
+
+        return false;
+    }
+
+    List<Point> getNextPoint(char c, List<Point> v, char[][] board) {
+        int row = board.length;
+        int col = board[0].length;
+        List<Point> result = new ArrayList<Point>();
+
+        Point p = v.get(0);
+        if (p.y - 1 >= 0 && board[p.x][p.y - 1] == c) {
+            boolean duplicate = false;
+            for (Point n : v) {
+                if (n.x == p.x && n.y == p.y - 1) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if (!duplicate) {
+                result.add(new Point(p.x, p.y - 1));
+            }
+        }
+        if (p.y + 1 < col && board[p.x][p.y + 1] == c) {
+            boolean duplicate = false;
+            for (Point n : v) {
+                if (n.x == p.x && n.y == p.y + 1) {
+                    duplicate = true;
+                    break;
+                }
+            }
+            if (!duplicate) {
+                result.add(new Point(p.x, p.y + 1));
+            }
+        }
+        if (p.x - 1 >= 0 && board[p.x - 1][p.y] == c) {
+            boolean duplicate = false;
+            for (Point n : v) {
+                if (n.x == p.x - 1 && n.y == p.y) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if (!duplicate) {
+                result.add(new Point(p.x - 1, p.y));
+            }
+        }
+        if (p.x + 1 < row && board[p.x + 1][p.y] == c) {
+            boolean duplicate = false;
+            for (Point n : v) {
+                if (n.x == p.x + 1 && n.y == p.y) {
+                    duplicate = true;
+                    break;
+                }
+            }
+
+            if (!duplicate) {
+                result.add(new Point(p.x + 1, p.y));
+            }
+
+        }
+
+        return result;
     }
 }

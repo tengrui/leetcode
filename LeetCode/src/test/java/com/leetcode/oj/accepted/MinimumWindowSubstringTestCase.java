@@ -1,13 +1,11 @@
-package com.leetcode.oj;
+package com.leetcode.oj.accepted;
 
 
-import java.util.List;
-
-import com.leetcode.oj.palindromepartitioning.Solution;
+import com.leetcode.oj.minimumwindowsubstring.Solution;
 
 import junit.framework.TestCase;
 
-public class PalindromePartitioningTestCase extends TestCase {
+public class MinimumWindowSubstringTestCase extends TestCase {
 
     Solution solution = new Solution();
     long startTime = 0L;
@@ -24,14 +22,17 @@ public class PalindromePartitioningTestCase extends TestCase {
     }
     
     public void testCase1() {
-        List<List<String>> r = solution.partition("aab");
+        String r = solution.minWindow("ADOBECODEBANC", "ABC");
         System.out.println(r);
         assertTrue(true);
     }
-    
-    //seeslaveidemonstrateyetartsnomedievalsees
     public void testCase2() {
-        List<List<String>> r = solution.partition("seeslaveidemonstrateyetartsnomedievalsees");
+        String r = solution.minWindow("a", "aa");
+        System.out.println(r);
+        assertTrue(true);
+    }
+    public void testCase3() {
+        String r = solution.minWindow("a", "a");
         System.out.println(r);
         assertTrue(true);
     }

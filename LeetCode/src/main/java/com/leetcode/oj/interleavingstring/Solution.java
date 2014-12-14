@@ -1,6 +1,44 @@
 package com.leetcode.oj.interleavingstring;
 
+import java.util.Deque;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Set;
+
 public class Solution {
+    class Point {
+        int x;
+        int y;
+
+        public Point(int x, int y) {
+            this.x = x;
+            this.y = y;
+        }
+
+        public String toString() {
+            return "(" + x + "," + y + ")";
+        }
+
+        public int hashCode() {
+            Integer i = x;
+            Integer j = y;
+            return i.hashCode() + j.hashCode();
+        }
+
+        public boolean equals(Object o) {
+            if (o instanceof Point) {
+                Point p = (Point)o;
+                if (p.x == this.x && p.y == this.y) {
+                    return true;
+                } else {
+                    return false;
+                }
+            } else {
+                return false;
+            }
+        }
+    }
+
     public boolean isInterleave(String s1, String s2, String s3) {
         if (s1 == null || s2 == null || s3 == null) {
             return false;
@@ -8,7 +46,7 @@ public class Solution {
         int N1 = s1.length();
         int N2 = s2.length();
         int N3 = s3.length();
-        
+
         if (N1 == 0) {
             return s3.equals(s2);
         }
@@ -18,63 +56,31 @@ public class Solution {
         if (N1 + N2 != N3) {
             return false;
         }
-        
-        int i = 0, j = 0, k = 0;
-        while (i < N3) {
-            char c3 = s3.charAt(i);
-            char c1 = j < N1 ? s1.charAt(j) : '\0';
-            char c2 = k < N2 ? s2.charAt(k) : '\0';
-            
-            if (c3 == c1 && c3 == c2) {
-                break;
-            } else if (c3 == c1) {
-                j++;
-            } else if (c3 == c2) {
-                k++;
-            } else {
-                return false;
+
+        Deque<Point> path = new LinkedList<Point>();
+        path.add(new Point(0, 0));
+        for (int n = 0; n < N3; ++n) {
+            char c3 = s3.charAt(n);
+            int capacity = path.size();
+            Set<Point> temp = new HashSet<Point>();
+            for (int m = 0; m < capacity; ++m) {
+                Point p = path.pollFirst();
+                int indexS1 = p.y;
+                int indexS2 = p.x;
+                if (indexS1 + 1 <= N1 && s1.charAt(indexS1) == c3) {
+                    temp.add(new Point(p.x, p.y + 1));
+                }
+                if (indexS2 + 1 <= N2 && s2.charAt(indexS2) == c3) {
+                    temp.add(new Point(p.x + 1, p.y));
+                }
             }
-            ++i;
-        }
-        
-        int m = N1, n = N2, p = N3;
-        while (p > 0) {
-            char c3 = s3.charAt(p - 1);
-            char c1 = m > 0 ? s1.charAt(m - 1) : '\0';
-            char c2 = n > 0 ? s2.charAt(n - 1) : '\0';
-            
-            if (c3 == c1 && c3 == c2) {
-                if (i + 1 >= p - 1) {
-                    return true;
-                }
-                String newS3 = s3.substring(i + 1, p - 1);
-                boolean result = false;
-                if (j <= m - 1 && k + 1 <= n) {
-                    result |= isInterleave(s1.substring(j, m - 1), s2.substring(k + 1, n), newS3);
-                }
-                
-                if (j <= m && k + 1 <= n - 1) {
-                    result |= isInterleave(s1.substring(j, m), s2.substring(k + 1, n - 1), newS3);
-                }
-                
-                if (j + 1 <= m && k <= n - 1) {
-                    result |= isInterleave(s1.substring(j + 1, m), s2.substring(k, n - 1), newS3);
-                }
-                
-                if (j + 1 <= m - 1 && k <= n) {
-                    result |= isInterleave(s1.substring(j + 1, m - 1), s2.substring(k, n), newS3);
-                }
-                return result;
-            } else if (c3 == c1) {
-                m--;
-            } else if (c3 == c2) {
-                n--;
-            } else {
+            if (temp.isEmpty()) {
                 return false;
+            } else {
+                path.addAll(temp);
             }
-            --p;
         }
-        
-        return true;        
+
+        return true;
     }
 }

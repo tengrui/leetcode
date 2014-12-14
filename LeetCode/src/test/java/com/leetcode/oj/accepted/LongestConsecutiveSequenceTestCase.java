@@ -1,6 +1,6 @@
 package com.leetcode.oj.accepted;
 
-import com.leetcode.oj.longestconsecutivesequence.Solution;
+import com.leetcode.oj.longest_consecutive_sequence.Solution;
 
 import junit.framework.TestCase;
 

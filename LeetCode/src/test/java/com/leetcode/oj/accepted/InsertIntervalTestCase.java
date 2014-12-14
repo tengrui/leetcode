@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.leetcode.oj.common.Interval;
-import com.leetcode.oj.insertinterval.Solution;
+import com.leetcode.oj.insert_interval.Solution;
 
 import junit.framework.TestCase;
 

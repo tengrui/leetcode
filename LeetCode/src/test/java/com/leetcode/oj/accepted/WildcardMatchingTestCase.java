@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.wildcardmatching.Solution;
+import com.leetcode.oj.wildcard_matching.Solution;
 
 public class WildcardMatchingTestCase extends TestCase {
     Solution solution = new Solution();

@@ -6,7 +6,7 @@ import java.util.List;
 import junit.framework.TestCase;
 
 import com.leetcode.oj.common.Interval;
-import com.leetcode.oj.mergeintervals.Solution;
+import com.leetcode.oj.merge_intervals.Solution;
 
 public class MergeIntervalsTestCase extends TestCase {
 

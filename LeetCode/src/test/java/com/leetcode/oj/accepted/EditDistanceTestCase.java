@@ -1,7 +1,7 @@
 package com.leetcode.oj.accepted;
 
 
-import com.leetcode.oj.editdistance.Solution;
+import com.leetcode.oj.edit_distance.Solution;
 
 import junit.framework.TestCase;
 

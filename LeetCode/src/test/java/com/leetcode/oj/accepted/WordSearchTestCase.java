@@ -1,6 +1,6 @@
 package com.leetcode.oj.accepted;
 
-import com.leetcode.oj.wordsearch.Solution;
+import com.leetcode.oj.word_search.Solution;
 
 import junit.framework.TestCase;
 

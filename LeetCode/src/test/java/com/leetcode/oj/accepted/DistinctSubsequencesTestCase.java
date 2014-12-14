@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.distinctsubsequences.Solution;
+import com.leetcode.oj.distinct_subsequences.Solution;
 
 
 public class DistinctSubsequencesTestCase extends TestCase {

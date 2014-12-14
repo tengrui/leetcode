@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.searchinrotatedsortedarray.Solution;
+import com.leetcode.oj.search_in_rotated_sorted_array.Solution;
 
 
 public class SearchInRotatedSortedArrayTestCase extends TestCase {

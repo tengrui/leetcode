@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.surroundedregions.Solution;
+import com.leetcode.oj.surrounded_regions.Solution;
 
 public class SurroundedRegionsTestCase extends TestCase {
     Solution solution = new Solution();

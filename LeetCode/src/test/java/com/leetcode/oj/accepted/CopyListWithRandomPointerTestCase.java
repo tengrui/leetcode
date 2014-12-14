@@ -3,7 +3,7 @@ package com.leetcode.oj.accepted;
 import junit.framework.TestCase;
 
 import com.leetcode.oj.common.RandomListNode;
-import com.leetcode.oj.copylistwithrandompointer.Solution;
+import com.leetcode.oj.copy_list_with_random_pointer.Solution;
 
 
 public class CopyListWithRandomPointerTestCase extends TestCase {

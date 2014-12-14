@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import java.util.List;
 
-import com.leetcode.oj.subsets.Solution;
+import com.leetcode.oj.sub_sets.Solution;
 
 import junit.framework.TestCase;
 

@@ -4,7 +4,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.nqueens.Solution;
+import com.leetcode.oj.n_queens.Solution;
 
 public class NQueuesTestCase extends TestCase {
 

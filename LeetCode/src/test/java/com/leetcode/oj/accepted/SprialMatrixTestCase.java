@@ -4,7 +4,7 @@ import java.util.List;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.spiralmatrix.Solution;
+import com.leetcode.oj.spiral_matrix.Solution;
 
 public class SprialMatrixTestCase extends TestCase {
     Solution solution = new Solution();

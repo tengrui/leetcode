@@ -1,7 +1,7 @@
 package com.leetcode.oj.accepted;
 
 
-import com.leetcode.oj.minimumwindowsubstring.Solution;
+import com.leetcode.oj.minimum_window_substring.Solution;
 
 import junit.framework.TestCase;
 

@@ -1,7 +1,7 @@
 package com.leetcode.oj.accepted;
 
 
-import com.leetcode.oj.lrucache.LRUCache;
+import com.leetcode.oj.lru_cache.LRUCache;
 
 import junit.framework.TestCase;
 

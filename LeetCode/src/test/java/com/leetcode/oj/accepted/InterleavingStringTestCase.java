@@ -1,6 +1,6 @@
 package com.leetcode.oj.accepted;
 
-import com.leetcode.oj.interleavingstring.Solution;
+import com.leetcode.oj.interleaving_string.Solution;
 
 import junit.framework.TestCase;
 

@@ -2,7 +2,7 @@ package com.leetcode.oj;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.wordsearch.Solution;
+import com.leetcode.oj.word_search.Solution;
 
 public class PalindromePartitioningIITestCase extends TestCase {
 

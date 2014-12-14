@@ -4,7 +4,8 @@ import java.util.List;
 
 
 
-import com.leetcode.oj.nqueensii.Solution;
+
+import com.leetcode.oj.n_queens_ii.Solution;
 
 import junit.framework.TestCase;
 

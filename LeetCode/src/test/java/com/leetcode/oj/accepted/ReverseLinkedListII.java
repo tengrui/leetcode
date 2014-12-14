@@ -1,7 +1,7 @@
 package com.leetcode.oj.accepted;
 
 import com.leetcode.oj.common.ListNode;
-import com.leetcode.oj.reverselinkedlistii.Solution;
+import com.leetcode.oj.reverse_linked_list_ii.Solution;
 
 import junit.framework.TestCase;
 

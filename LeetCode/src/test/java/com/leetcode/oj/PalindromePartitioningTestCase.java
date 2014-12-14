@@ -3,7 +3,7 @@ package com.leetcode.oj;
 
 import java.util.List;
 
-import com.leetcode.oj.palindromepartitioning.Solution;
+import com.leetcode.oj.palindrome_partitioning.Solution;
 
 import junit.framework.TestCase;
 

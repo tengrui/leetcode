@@ -2,7 +2,7 @@ package com.leetcode.oj.accepted;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.largestrectangleinhistogram.Solution;
+import com.leetcode.oj.largest_rectangle_in_histogram.Solution;
 
 public class LargestRectangleInHistogramTestCase extends TestCase {
 

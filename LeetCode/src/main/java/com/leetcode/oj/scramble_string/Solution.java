@@ -20,10 +20,14 @@ public class Solution {
             String x4 = s2.substring(N - i);
             if (isSimilar(x1, x3)) {
                 String x5 = s2.substring(i);
-                return (isScramble(x1, x3) && isScramble(x2, x5));
+                if (isScramble(x1, x3) && isScramble(x2, x5)) {
+                    return true;
+                }
             } else if (isSimilar(x1, x4)){
                 String x5 = s2.substring(0, N - i);
-                return (isScramble(x1, x4) && isScramble(x2, x5));
+                if (isScramble(x1, x4) && isScramble(x2, x5)) {
+                    return true;
+                }
             }
         }
         

@@ -2,7 +2,7 @@ package com.leetcode.oj;
 
 import junit.framework.TestCase;
 
-import com.leetcode.oj.word_search.Solution;
+import com.leetcode.oj.palindrome_partitioning_ii.Solution;
 
 public class PalindromePartitioningIITestCase extends TestCase {
 
@@ -16,10 +16,9 @@ public class PalindromePartitioningIITestCase extends TestCase {
 
     protected void tearDown() throws Exception {
         super.tearDown();
-        System.out.println("Time elapsed: "
-                + (System.currentTimeMillis() - startTime));
+        System.out.println("Time elapsed: " + (System.currentTimeMillis() - startTime));
     }
-    
+
     public void testCase1() {
         assertTrue(true);
     }

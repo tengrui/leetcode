@@ -1,4 +1,4 @@
-package com.leetcode.oj;
+package com.leetcode.oj.accepted;
 
 import com.leetcode.oj.binary_tree_maximum_path_sum.Solution;
 import com.leetcode.oj.common.TreeNode;

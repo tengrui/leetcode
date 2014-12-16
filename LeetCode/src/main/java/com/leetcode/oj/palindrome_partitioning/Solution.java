@@ -19,16 +19,16 @@ public class Solution {
             result.add(line);
             return result;
         }
-        for (int i = 0; i < N; i++) {
-            String sub1 = s.substring(0, i + 1);
-            String sub2 = s.substring(i + 1, N);
+        for (int i = 1; i < N; i++) {
+            String sub1 = s.substring(0, i);
+            String sub2 = s.substring(i, N);
             if (isPalindrome(sub1)) {
                 List<List<String>> subResult = null;
                 if (map.containsKey(sub2)) {
                     subResult = map.get(sub2);
                 } else {
                     subResult = partition(sub2);
-                    map.put(sub2, result);  
+                    map.put(sub2, subResult);
                 }
                 for (List<String> sub : subResult) {
                     List<String> l = new ArrayList<String>();
@@ -38,17 +38,27 @@ public class Solution {
                 }
             }
         }
+
+        if (isPalindrome(s)) {
+            List<String> l = new ArrayList<String>();
+            l.add(s);
+            result.add(l);
+        }
         return result;
     }
 
     public boolean isPalindrome(String s) {
         int N = s.length();
         Stack<Character> stack = new Stack<Character>();
-        for (int i = 0; i < N / 2; ++i) {
-            stack.push(s.charAt(i));
+        int i = 0;
+        while (i < N / 2) {
+            stack.push(s.charAt(i++));
         }
-        for (int i = N - 1; i > N / 2; --i) {
-            if (s.charAt(i) != stack.pop()) {
+        if (N % 2 == 1) {
+            i++;
+        }
+        while (i < N) {
+            if (s.charAt(i++) != stack.pop()) {
                 return false;
             }
         }

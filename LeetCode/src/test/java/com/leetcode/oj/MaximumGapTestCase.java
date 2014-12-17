@@ -18,7 +18,11 @@ public class MaximumGapTestCase extends TestCase {
         System.out.println("Time elapsed: " + (System.currentTimeMillis() - startTime));
     }
 
+    //3,6,9,1
     public void testCase1() {
-        assertTrue(true);
+        int [] num = {3, 6, 9, 1};
+        int r = solution.maximumGap(num);
+        System.out.println(r);
+        assertTrue(r == 3);
     }
 }
